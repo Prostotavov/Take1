@@ -9,7 +9,7 @@ struct Library {
 struct Dictionary: Identifiable {
     
     var id = UUID()
-    var name: String = "Dictionary"
+    var name: String
     var words = [Word]()
 }
 
@@ -23,33 +23,40 @@ struct Word: Identifiable {
 struct LibraryView: View {
     
     @State var libr = Library()
-    @State var dict = Dictionary()
+    @State var dict = Dictionary(name: "")
+    @State var showAddDictView = false
     
     var body: some View {
-        NavigationView{
-            List {
-                ForEach(libr.dictionaties){ dic in
-                    NavigationLink(
-                        destination: DictionaryView(dict: $dict))
-                    {
-                        Text(dic.name)
-                        
+        ZStack {
+            NavigationView{
+                List {
+                    ForEach(libr.dictionaties){ dic in
+                        NavigationLink(
+                            destination: DictionaryView(dict: $dict))
+                        {
+                            Text(dic.name)
+                            
+                        }
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .principal){
+                        Text(libr.name)
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button(action: {
+                            showAddDictView = true
+                            
+                        }){
+                            Image(systemName: "plus.circle.fill")
+                                .font(.title)
+                            
+                        }
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .principal){
-                    Text(libr.name)
-                }
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button(action: {
-                        libr.dictionaties.append(dict)
-                    }){
-                        Image(systemName: "plus.circle.fill")
-                            .font(.title)
-                        
-                    }
-                }
+            if showAddDictView {
+                AddDictView(showAddDictView: $showAddDictView, libr: $libr)
             }
         }
     }
