@@ -14,6 +14,7 @@
 		AA6A38352659B86800A98BA5 /* Take1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A38342659B86800A98BA5 /* Take1Tests.swift */; };
 		AA6A38402659B86900A98BA5 /* Take1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A383F2659B86900A98BA5 /* Take1UITests.swift */; };
 		AA6DA274265D8E1700309C88 /* AddDictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA273265D8E1700309C88 /* AddDictView.swift */; };
+		AA6DA276265D98C200309C88 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA275265D98C200309C88 /* AddWordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		AA6A383F2659B86900A98BA5 /* Take1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Take1UITests.swift; sourceTree = "<group>"; };
 		AA6A38412659B86900A98BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA6DA273265D8E1700309C88 /* AddDictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDictView.swift; sourceTree = "<group>"; };
+		AA6DA275265D98C200309C88 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				AA6A38222659B86500A98BA5 /* Take1App.swift */,
 				AA6A38242659B86500A98BA5 /* ContentView.swift */,
+				AA6DA275265D98C200309C88 /* AddWordView.swift */,
 				AA6DA273265D8E1700309C88 /* AddDictView.swift */,
 				AA6A38262659B86800A98BA5 /* Assets.xcassets */,
 				AA6A382B2659B86800A98BA5 /* Info.plist */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6DA276265D98C200309C88 /* AddWordView.swift in Sources */,
 				AA6A38252659B86500A98BA5 /* ContentView.swift in Sources */,
 				AA6A38232659B86500A98BA5 /* Take1App.swift in Sources */,
 				AA6DA274265D8E1700309C88 /* AddDictView.swift in Sources */,

@@ -16,7 +16,10 @@ struct Dictionary: Identifiable {
 struct Word: Identifiable {
     
     var id = UUID()
-    var name: String = "Word"
+    var name: String
+    var translate: String
+    var analogy: String
+    var shortAnalogy: String
 }
 
 
@@ -65,25 +68,31 @@ struct LibraryView: View {
 struct DictionaryView: View {
     
     @Binding var dict: Dictionary
-    @State var word = Word()
+    @State var word = Word(name: "", translate: "", analogy: "", shortAnalogy: "")
+    @State var showAddWordView = false
     
     var body: some View {
-        List {
-            ForEach(dict.words){ wor in
-                Text(wor.name)
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .principal){
-                Text(dict.name)
-            }
-            ToolbarItem(placement: .navigationBarTrailing){
-                Button(action: {
-                    dict.words.append(word)
-                }){
-                    Image(systemName: "plus.circle.fill")
-                        .font(.title)
+        ZStack {
+            List {
+                ForEach(dict.words){ wor in
+                    Text(wor.name)
                 }
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal){
+                    Text(dict.name)
+                }
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button(action: {
+                        showAddWordView = true
+                    }){
+                        Image(systemName: "plus.circle.fill")
+                            .font(.title)
+                    }
+                }
+            }
+            if showAddWordView {
+                AddWordView(showAddWordView: $showAddWordView, dict: $dict)
             }
         }
     }
