@@ -3,6 +3,7 @@ import SwiftUI
 struct AddWordView: View {
     
     @Binding var showAddWordView: Bool
+    
     @State var word = Word(name: "", translate: "", analogy: "", shortAnalogy: "")
     @Binding var dict: Dictionary
     

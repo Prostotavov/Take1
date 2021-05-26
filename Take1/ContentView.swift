@@ -26,16 +26,15 @@ struct Word: Identifiable {
 struct LibraryView: View {
     
     @State var libr = Library()
-    @State var dict = Dictionary(name: "")
     @State var showAddDictView = false
-    
+
     var body: some View {
         ZStack {
             NavigationView{
                 List {
                     ForEach(libr.dictionaties){ dic in
                         NavigationLink(
-                            destination: DictionaryView(dict: $dict))
+                            destination: DictionaryView(dict: $libr.dictionaties[libr.dictionaties.firstIndex(where: { $0.id == dic.id }) ?? 0]))
                         {
                             Text(dic.name)
                             
@@ -67,15 +66,30 @@ struct LibraryView: View {
 
 struct DictionaryView: View {
     
+
     @Binding var dict: Dictionary
     @State var word = Word(name: "", translate: "", analogy: "", shortAnalogy: "")
     @State var showAddWordView = false
+    @State var showEditWordView = false
+    @State var wordIndex = 0;
+
     
     var body: some View {
         ZStack {
             List {
                 ForEach(dict.words){ wor in
-                    Text(wor.name)
+                    Button(action:{
+                        showEditWordView = true
+                    }){
+                        HStack(alignment: .top){
+                            VStack(alignment: .leading){
+                                Text(wor.name).font(.headline)
+                                Text(wor.translate)
+                            }
+                            Spacer()
+                            Text(wor.shortAnalogy)
+                        }
+                    }
                 }
             }
             .toolbar {
@@ -94,7 +108,11 @@ struct DictionaryView: View {
             if showAddWordView {
                 AddWordView(showAddWordView: $showAddWordView, dict: $dict)
             }
+            if showEditWordView {
+                EditWordView(showEditWordView: $showEditWordView, dict: $dict)
+            }
         }
+
     }
 }
 
