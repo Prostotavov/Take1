@@ -8,7 +8,7 @@ struct EditWordView: View {
     var index: Int 
     
     var body: some View {
-        ZStack{
+        ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .fill (Color(.systemBackground))
                 .shadow(radius: 10)
@@ -27,7 +27,7 @@ struct EditWordView: View {
                         
                         Spacer()
                         
-                        HStack{
+                        HStack {
                             Button(action: {
                                 showEditWordView = false
                             }, label: {
@@ -40,20 +40,21 @@ struct EditWordView: View {
                             }, label: {
                                 Text("Save")
                             })
-                            
                         }
                     }
                     .padding()
                 )
         }
         .onAppear() {
-            word = dict.words[index]
+            if index != -1 {
+                word = dict.words[index]
+            }
         }
     }
 }
 
 struct EditWordView_Previews: PreviewProvider {
     static var previews: some View {
-        EditWordView(showEditWordView: .constant(true), dict: .constant(Dictionary(name: "")), index: 0)
+        EditWordView(showEditWordView: .constant(true), dict: .constant(Dictionary(name: "")), index: -1)
     }
 }

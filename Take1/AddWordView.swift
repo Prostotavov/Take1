@@ -3,15 +3,14 @@ import SwiftUI
 struct AddWordView: View {
     
     @Binding var showAddWordView: Bool
-    
     @State var word = Word(name: "", translate: "", analogy: "", shortAnalogy: "")
     @Binding var dict: Dictionary
     
     var body: some View {
         ZStack {
             Color.white.opacity(0.1)
-            VStack{
-                ZStack{
+            VStack {
+                ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .fill (Color(.systemBackground))
                         .shadow(radius: 10)
@@ -27,11 +26,10 @@ struct AddWordView: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 TextField("подсказка", text: $word.shortAnalogy)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                
-                                
+ 
                                 Spacer()
                                 
-                                HStack{
+                                HStack {
                                     Button(action: {
                                         showAddWordView = false
                                     }, label: {
@@ -52,7 +50,6 @@ struct AddWordView: View {
                 }
             }
         }
-        
     }
 }
 

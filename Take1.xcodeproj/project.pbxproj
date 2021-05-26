@@ -103,9 +103,9 @@
 			children = (
 				AA6A38222659B86500A98BA5 /* Take1App.swift */,
 				AA6A38242659B86500A98BA5 /* ContentView.swift */,
-				AA6DA277265D9DB200309C88 /* EditWordView.swift */,
-				AA6DA275265D98C200309C88 /* AddWordView.swift */,
 				AA6DA273265D8E1700309C88 /* AddDictView.swift */,
+				AA6DA275265D98C200309C88 /* AddWordView.swift */,
+				AA6DA277265D9DB200309C88 /* EditWordView.swift */,
 				AA6A38262659B86800A98BA5 /* Assets.xcassets */,
 				AA6A382B2659B86800A98BA5 /* Info.plist */,
 				AA6A38282659B86800A98BA5 /* Preview Content */,

@@ -6,25 +6,24 @@ struct AddDictView: View {
     @State var dict = Dictionary(name: "")
     @Binding var libr: Library
     
-    
     var body: some View {
         ZStack {
             Color.white.opacity(0.1)
-            VStack{
-                ZStack{
+            VStack {
+                ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .fill (Color(.systemBackground))
                         .shadow(radius: 10)
                         .frame(width: 300, height: 120)
                         .overlay(
                             VStack(alignment: .leading) {
-                                
+                    
                                 TextField("имя", text: $dict.name)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 
                                 Spacer()
                                 
-                                HStack{
+                                HStack {
                                     Button(action: {
                                         showAddDictView = false
                                     }, label: {
@@ -37,7 +36,6 @@ struct AddDictView: View {
                                     }, label: {
                                         Text("Save")
                                     })
-                                    
                                 }
                             }
                             .padding()
@@ -50,7 +48,6 @@ struct AddDictView: View {
 
 struct AddDictView_Previews: PreviewProvider {
 
-    
     static var previews: some View {
         AddDictView(showAddDictView: .constant(true), libr: .constant(Library()))
     }
