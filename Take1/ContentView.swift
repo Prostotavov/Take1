@@ -66,20 +66,20 @@ struct LibraryView: View {
 
 struct DictionaryView: View {
     
-
     @Binding var dict: Dictionary
-    @State var word = Word(name: "", translate: "", analogy: "", shortAnalogy: "")
     @State var showAddWordView = false
     @State var showEditWordView = false
-    @State var wordIndex = 0;
+    @State var index = 0;
 
-    
     var body: some View {
         ZStack {
             List {
                 ForEach(dict.words){ wor in
                     Button(action:{
                         showEditWordView = true
+                        index = dict.words.firstIndex(where: {
+                            $0.id == wor.id
+                        }) ?? 0
                     }){
                         HStack(alignment: .top){
                             VStack(alignment: .leading){
@@ -109,7 +109,7 @@ struct DictionaryView: View {
                 AddWordView(showAddWordView: $showAddWordView, dict: $dict)
             }
             if showEditWordView {
-                EditWordView(showEditWordView: $showEditWordView, dict: $dict)
+                EditWordView(showEditWordView: $showEditWordView, dict: $dict, index: index)
             }
         }
 

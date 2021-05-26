@@ -5,6 +5,7 @@ struct EditWordView: View {
     @Binding var showEditWordView: Bool
     @State var word = Word(name: "", translate: "", analogy: "", shortAnalogy: "")
     @Binding var dict: Dictionary
+    var index: Int 
     
     var body: some View {
         ZStack{
@@ -34,7 +35,7 @@ struct EditWordView: View {
                             })
                             Spacer()
                             Button(action: {
-//                                dict.words.append(word)
+                                dict.words[index] = word
                                 showEditWordView = false
                             }, label: {
                                 Text("Save")
@@ -45,11 +46,14 @@ struct EditWordView: View {
                     .padding()
                 )
         }
+        .onAppear() {
+            word = dict.words[index]
+        }
     }
 }
 
 struct EditWordView_Previews: PreviewProvider {
     static var previews: some View {
-        EditWordView(showEditWordView: .constant(true), dict: .constant(Dictionary(name: "")))
+        EditWordView(showEditWordView: .constant(true), dict: .constant(Dictionary(name: "")), index: 0)
     }
 }

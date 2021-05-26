@@ -6,6 +6,7 @@ struct AddDictView: View {
     @State var dict = Dictionary(name: "")
     @Binding var libr: Library
     
+    
     var body: some View {
         ZStack {
             Color.white.opacity(0.1)
