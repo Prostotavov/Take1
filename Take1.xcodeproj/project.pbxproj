@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5A57D6266198BF00A35786 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A57D5266198BF00A35786 /* LibraryView.swift */; };
+		AA5A57DB266199AA00A35786 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A57DA266199AA00A35786 /* AccountView.swift */; };
 		AA6A38232659B86500A98BA5 /* Take1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A38222659B86500A98BA5 /* Take1App.swift */; };
 		AA6A38252659B86500A98BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A38242659B86500A98BA5 /* ContentView.swift */; };
 		AA6A38272659B86800A98BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6A38262659B86800A98BA5 /* Assets.xcassets */; };
@@ -16,8 +18,6 @@
 		AA6DA274265D8E1700309C88 /* AddDictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA273265D8E1700309C88 /* AddDictView.swift */; };
 		AA6DA276265D98C200309C88 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA275265D98C200309C88 /* AddWordView.swift */; };
 		AA6DA278265D9DB200309C88 /* EditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA277265D9DB200309C88 /* EditWordView.swift */; };
-		AA8747ED26606B6500FE188C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8747EB26606B6500FE188C /* BlurView.swift */; };
-		AA8747EE26606B6500FE188C /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8747EC26606B6500FE188C /* VisualEffectBlur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA5A57D5266198BF00A35786 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		AA5A57DA266199AA00A35786 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		AA6A381F2659B86500A98BA5 /* Take1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Take1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6A38222659B86500A98BA5 /* Take1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Take1App.swift; sourceTree = "<group>"; };
 		AA6A38242659B86500A98BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		AA6DA273265D8E1700309C88 /* AddDictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDictView.swift; sourceTree = "<group>"; };
 		AA6DA275265D98C200309C88 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
 		AA6DA277265D9DB200309C88 /* EditWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWordView.swift; sourceTree = "<group>"; };
-		AA8747EB26606B6500FE188C /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = ../../../../Downloads/BlurView.swift; sourceTree = "<group>"; };
-		AA8747EC26606B6500FE188C /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualEffectBlur.swift; path = ../../../../Downloads/VisualEffectBlur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA5A57D42661988700A35786 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A57D5266198BF00A35786 /* LibraryView.swift */,
+				AA6DA273265D8E1700309C88 /* AddDictView.swift */,
+				AA6DA277265D9DB200309C88 /* EditWordView.swift */,
+				AA6DA275265D98C200309C88 /* AddWordView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		AA5A57D72661997F00A35786 /* Chellendges */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chellendges;
+			sourceTree = "<group>";
+		};
+		AA5A57D92661999500A35786 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A57DA266199AA00A35786 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		AA6A38162659B86500A98BA5 = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +131,11 @@
 		AA6A38212659B86500A98BA5 /* Take1 */ = {
 			isa = PBXGroup;
 			children = (
-				AA8747EA26606B2D00FE188C /* Blur */,
+				AA5A57D92661999500A35786 /* Account */,
+				AA5A57D72661997F00A35786 /* Chellendges */,
+				AA5A57D42661988700A35786 /* Library */,
 				AA6A38222659B86500A98BA5 /* Take1App.swift */,
 				AA6A38242659B86500A98BA5 /* ContentView.swift */,
-				AA6DA273265D8E1700309C88 /* AddDictView.swift */,
-				AA6DA275265D98C200309C88 /* AddWordView.swift */,
-				AA6DA277265D9DB200309C88 /* EditWordView.swift */,
 				AA6A38262659B86800A98BA5 /* Assets.xcassets */,
 				AA6A382B2659B86800A98BA5 /* Info.plist */,
 				AA6A38282659B86800A98BA5 /* Preview Content */,
@@ -142,15 +167,6 @@
 				AA6A38412659B86900A98BA5 /* Info.plist */,
 			);
 			path = Take1UITests;
-			sourceTree = "<group>";
-		};
-		AA8747EA26606B2D00FE188C /* Blur */ = {
-			isa = PBXGroup;
-			children = (
-				AA8747EB26606B6500FE188C /* BlurView.swift */,
-				AA8747EC26606B6500FE188C /* VisualEffectBlur.swift */,
-			);
-			path = Blur;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,13 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA8747EE26606B6500FE188C /* VisualEffectBlur.swift in Sources */,
 				AA6DA276265D98C200309C88 /* AddWordView.swift in Sources */,
 				AA6A38252659B86500A98BA5 /* ContentView.swift in Sources */,
 				AA6A38232659B86500A98BA5 /* Take1App.swift in Sources */,
 				AA6DA278265D9DB200309C88 /* EditWordView.swift in Sources */,
+				AA5A57DB266199AA00A35786 /* AccountView.swift in Sources */,
+				AA5A57D6266198BF00A35786 /* LibraryView.swift in Sources */,
 				AA6DA274265D8E1700309C88 /* AddDictView.swift in Sources */,
-				AA8747ED26606B6500FE188C /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

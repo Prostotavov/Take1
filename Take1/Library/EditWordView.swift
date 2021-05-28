@@ -53,7 +53,7 @@ struct EditWordView: View {
         }
         .ignoresSafeArea()
         .onAppear() {
-            if index != -1 {
+            if index != -2 {
                 word = dict.words[index]
             }
         }
@@ -62,6 +62,6 @@ struct EditWordView: View {
 
 struct EditWordView_Previews: PreviewProvider {
     static var previews: some View {
-        EditWordView(showEditWordView: .constant(true), dict: .constant(Dictionary(name: "")), index: -1)
+        EditWordView(showEditWordView: .constant(true), dict: .constant(Dictionary(name: "")), index: -2)
     }
 }
