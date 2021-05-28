@@ -9,6 +9,12 @@ struct EditWordView: View {
     
     var body: some View {
         ZStack {
+            Button(action: {
+                showEditWordView = false
+            }){
+                Rectangle()
+                    .fill(Color.init(.clear))
+            }
             RoundedRectangle(cornerRadius: 10)
                 .fill (Color(.systemBackground))
                 .shadow(radius: 10)
@@ -45,6 +51,7 @@ struct EditWordView: View {
                     .padding()
                 )
         }
+        .ignoresSafeArea()
         .onAppear() {
             if index != -1 {
                 word = dict.words[index]

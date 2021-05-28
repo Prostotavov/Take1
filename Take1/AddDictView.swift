@@ -11,6 +11,13 @@ struct AddDictView: View {
             Color.white.opacity(0.1)
             VStack {
                 ZStack {
+                    Button(action: {
+                        showAddDictView = false
+                    }){
+                        Rectangle()
+                            .fill(Color.init(.clear))
+                    }
+                    
                     RoundedRectangle(cornerRadius: 10)
                         .fill (Color(.systemBackground))
                         .shadow(radius: 10)
@@ -43,6 +50,7 @@ struct AddDictView: View {
                 }
             }
         }
+        .ignoresSafeArea()
     }
 }
 

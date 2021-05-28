@@ -11,6 +11,13 @@ struct AddWordView: View {
             Color.white.opacity(0.1)
             VStack {
                 ZStack {
+                    Button(action: {
+                        showAddWordView = false
+                    }){
+                        Rectangle()
+                            .fill(Color.init(.clear))
+                    }
+
                     RoundedRectangle(cornerRadius: 10)
                         .fill (Color(.systemBackground))
                         .shadow(radius: 10)
@@ -48,6 +55,7 @@ struct AddWordView: View {
                             .padding()
                         )
                 }
+                .ignoresSafeArea()
             }
         }
     }
