@@ -24,23 +24,28 @@ struct Word: Identifiable {
 
 struct ContentView: View {
     
+    @State var selection = 1
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             Text("1")
                 .tabItem {
-                    Image(systemName: "1.circle")
+                    Image(systemName: "flag.circle")
                     Text("Chellendges")
                 }
+                .tag(0)
             LibraryView()
                 .tabItem {
-                    Image(systemName: "2.circle")
+                    Image(systemName: "book.circle")
                     Text("Library")
                 }
+                .tag(1)
             Text("3")
                 .tabItem {
-                    Image(systemName: "3.circle")
+                    Image(systemName: "person.circle")
                     Text("Account")
                 }
+                .tag(2)
         }
     }
 }
@@ -52,14 +57,18 @@ struct LibraryView: View {
     
     var body: some View {
         ZStack {
-            NavigationView{
+            NavigationView {
                 List {
                     ForEach(libr.dictionaties){ dic in
                         NavigationLink(
-                            destination: DictionaryView(dict: $libr.dictionaties[libr.dictionaties.firstIndex(where: { $0.id == dic.id }) ?? 0])) {
+                            destination: DictionaryView(dict: $libr.dictionaties[libr.dictionaties.firstIndex(where: { $0.id == dic.id }) ?? 0])
+                        ) {
                             Text(dic.name)
                             
                         }
+                    }
+                    .onDelete { (IndexSet) in
+                        self.libr.dictionaties.remove(atOffsets: IndexSet)
                     }
                 }
                 .toolbar {
@@ -115,7 +124,9 @@ struct DictionaryView: View {
                             Text(wor.shortAnalogy)
                         }
                     }
-                    
+                }
+                .onDelete { (IndexSet) in
+                    self.dict.words.remove(atOffsets: IndexSet)
                 }
             }
             .toolbar {
@@ -133,9 +144,8 @@ struct DictionaryView: View {
                     }
                 }
             }
-            .blur(radius: showAddWordView || showEditWordView ? 1 : 0)
-
-            if showAddWordView && !showEditWordView{
+            
+            if showAddWordView && !showEditWordView {
                 AddWordView(showAddWordView: $showAddWordView, dict: $dict)
             }
             if showEditWordView && !showAddWordView {
