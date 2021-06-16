@@ -1,72 +1,12 @@
+//
+//  DictionaryView.swift
+//  Take1
+//
+//  Created by MacBook Pro on 16.06.21.
+//
+
+import Foundation
 import SwiftUI
-
-import SwiftUI
-
-struct Library {
-    
-    var name: String = "Library"
-    var dictionaties = [Dictionary]()
-}
-
-struct Dictionary: Identifiable {
-    
-    var id = UUID()
-    var name: String
-    var words = [Word]()
-}
-
-struct Word: Identifiable {
-    
-    var id = UUID()
-    var name: String
-    var translate: String
-    var analogy: String
-    var shortAnalogy: String
-}
-
-
-struct LibraryView: View {
-    
-    @State var libr = Library()
-    @State var showAddDictView = false
-    
-    var body: some View {
-        ZStack {
-            NavigationView {
-                List {
-                    ForEach(libr.dictionaties){ dic in
-                        NavigationLink(
-                            destination: DictionaryView(dict: $libr.dictionaties[libr.dictionaties.firstIndex(where: { $0.id == dic.id }) ?? 0])
-                        ) {
-                            Text(dic.name)
-                            
-                        }
-                    }
-                    .onDelete { (IndexSet) in
-                        self.libr.dictionaties.remove(atOffsets: IndexSet)
-                    }
-                }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text(libr.name)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            showAddDictView = true
-                        }){
-                            Image(systemName: "plus.circle.fill")
-                                .font(.title)
-                        }
-                    }
-                }
-            }
-            .blur(radius: showAddDictView ? 3.0 : 0)
-            if showAddDictView {
-                AddDictView(showAddDictView: $showAddDictView, libr: $libr)
-            }
-        }.ignoresSafeArea()
-    }
-}
 
 struct DictionaryView: View {
     
@@ -141,8 +81,9 @@ struct DictionaryView: View {
     }
 }
 
-struct LibraryView_Previews: PreviewProvider {
+struct DictionaryView_Previews: PreviewProvider {
+    static var dict = Dictionary(name: "Test")
     static var previews: some View {
-        LibraryView()
+        DictionaryView(dict: .constant(dict))
     }
 }

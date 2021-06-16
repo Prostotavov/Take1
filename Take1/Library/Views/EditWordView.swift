@@ -22,13 +22,13 @@ struct EditWordView: View {
                 .overlay(
                     VStack(alignment: .leading) {
                         
-                        TextField("слово", text: $word.name)
+                        TextField("word", text: $word.name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        TextField("перевод", text: $word.translate)
+                        TextField("translate", text: $word.translate)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        TextField("аналогия", text: $word.analogy)
+                        TextField("analogy", text: $word.analogy)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        TextField("подсказка", text: $word.shortAnalogy)
+                        TextField("hint", text: $word.shortAnalogy)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         Spacer()
@@ -61,7 +61,10 @@ struct EditWordView: View {
 }
 
 struct EditWordView_Previews: PreviewProvider {
+    
+    static var dict = Dictionary(name: "Test")
+    
     static var previews: some View {
-        EditWordView(showEditWordView: .constant(true), dict: .constant(Dictionary(name: "")), index: -2)
+        EditWordView(showEditWordView: .constant(true), dict: .constant(dict), index: -2)
     }
 }

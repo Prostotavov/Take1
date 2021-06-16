@@ -21,6 +21,7 @@ struct AccountView: View {
                     Image(uiImage: image ?? UIImage(named: "placeholder")!)
                         .resizable()
                         .frame(width: 80, height: 80)
+                        .clipShape(Circle())
                 }.padding()
                 .actionSheet(isPresented: $showSheet) {
                     ActionSheet(title: Text("Select Photo"),

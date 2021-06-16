@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct AddDictView: View {
+struct AddWordView: View {
     
-    @Binding var showAddDictView: Bool
-    @State var dict = Dictionary(name: "")
-    @Binding var libr: Library
+    @Binding var showAddWordView: Bool
+    @State var word = Word(name: "", translate: "", analogy: "", shortAnalogy: "")
+    @Binding var dict: Dictionary
     
     var body: some View {
         ZStack {
@@ -12,51 +12,57 @@ struct AddDictView: View {
             VStack {
                 ZStack {
                     Button(action: {
-                        showAddDictView = false
+                        showAddWordView = false
                     }){
                         Rectangle()
                             .fill(Color.init(.clear))
                     }
-                    
+
                     RoundedRectangle(cornerRadius: 10)
                         .fill (Color(.systemBackground))
                         .shadow(radius: 10)
-                        .frame(width: 300, height: 120)
+                        .frame(width: 300, height: 240)
                         .overlay(
                             VStack(alignment: .leading) {
-                    
-                                TextField("имя", text: $dict.name)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
                                 
+                                TextField("word", text: $word.name)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                TextField("translate", text: $word.translate)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                TextField("analogy", text: $word.analogy)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                TextField("hint", text: $word.shortAnalogy)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+ 
                                 Spacer()
                                 
                                 HStack {
                                     Button(action: {
-                                        showAddDictView = false
+                                        showAddWordView = false
                                     }, label: {
                                         Text("Cancel")
                                     })
                                     Spacer()
                                     Button(action: {
-                                        libr.dictionaties.append(dict)
-                                        showAddDictView = false
+                                        dict.words.append(word)
+                                        showAddWordView = false
                                     }, label: {
                                         Text("Save")
                                     })
+                                    
                                 }
                             }
                             .padding()
                         )
                 }
+                .ignoresSafeArea()
             }
         }
-        .ignoresSafeArea()
     }
 }
 
-struct AddDictView_Previews: PreviewProvider {
-
+struct AddWordView_Previews: PreviewProvider {
     static var previews: some View {
-        AddDictView(showAddDictView: .constant(true), libr: .constant(Library()))
+        AddWordView(showAddWordView: .constant(true), dict: .constant(Dictionary(name: "")))
     }
 }

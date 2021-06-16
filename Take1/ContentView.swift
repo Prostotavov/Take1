@@ -17,6 +17,7 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "book.circle")
                     Text("Library")
+                    
                 }
                 .tag(1)
             AccountView()

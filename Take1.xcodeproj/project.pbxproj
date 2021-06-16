@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA008FA9267A835B00D58630 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA008FA8267A835B00D58630 /* DictionaryView.swift */; };
 		AA5A57D6266198BF00A35786 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A57D5266198BF00A35786 /* LibraryView.swift */; };
 		AA5A57DB266199AA00A35786 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A57DA266199AA00A35786 /* AccountView.swift */; };
 		AA5A57DD26619B4B00A35786 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A57DC26619B4B00A35786 /* LoginPageView.swift */; };
@@ -21,6 +22,9 @@
 		AA6DA274265D8E1700309C88 /* AddDictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA273265D8E1700309C88 /* AddDictView.swift */; };
 		AA6DA276265D98C200309C88 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA275265D98C200309C88 /* AddWordView.swift */; };
 		AA6DA278265D9DB200309C88 /* EditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6DA277265D9DB200309C88 /* EditWordView.swift */; };
+		AA9285A82667E43500164579 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9285A72667E43500164579 /* Word.swift */; };
+		AA9285AA2667E4D800164579 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9285A92667E4D800164579 /* Dictionary.swift */; };
+		AA9285AD2667E4FB00164579 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9285AC2667E4FB00164579 /* Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA008FA8267A835B00D58630 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		AA5A57D5266198BF00A35786 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		AA5A57DA266199AA00A35786 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		AA5A57DC26619B4B00A35786 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -61,6 +66,9 @@
 		AA6DA273265D8E1700309C88 /* AddDictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDictView.swift; sourceTree = "<group>"; };
 		AA6DA275265D98C200309C88 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
 		AA6DA277265D9DB200309C88 /* EditWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWordView.swift; sourceTree = "<group>"; };
+		AA9285A72667E43500164579 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		AA9285A92667E4D800164579 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		AA9285AC2667E4FB00164579 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA5A57D42661988700A35786 /* Library */ = {
+		AA008FAA267A845500D58630 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AA5A57D5266198BF00A35786 /* LibraryView.swift */,
+				AA008FA8267A835B00D58630 /* DictionaryView.swift */,
 				AA6DA273265D8E1700309C88 /* AddDictView.swift */,
-				AA6DA277265D9DB200309C88 /* EditWordView.swift */,
 				AA6DA275265D98C200309C88 /* AddWordView.swift */,
+				AA6DA277265D9DB200309C88 /* EditWordView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA5A57D42661988700A35786 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AA008FAA267A845500D58630 /* Views */,
+				AA9285A42667E40200164579 /* Models */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -176,6 +194,16 @@
 				AA6A38412659B86900A98BA5 /* Info.plist */,
 			);
 			path = Take1UITests;
+			sourceTree = "<group>";
+		};
+		AA9285A42667E40200164579 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA9285AC2667E4FB00164579 /* Library.swift */,
+				AA9285A92667E4D800164579 /* Dictionary.swift */,
+				AA9285A72667E43500164579 /* Word.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,12 +335,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA008FA9267A835B00D58630 /* DictionaryView.swift in Sources */,
 				AA6DA276265D98C200309C88 /* AddWordView.swift in Sources */,
+				AA9285AD2667E4FB00164579 /* Library.swift in Sources */,
 				AA6A38252659B86500A98BA5 /* ContentView.swift in Sources */,
 				AA6A38232659B86500A98BA5 /* Take1App.swift in Sources */,
 				AA6DA278265D9DB200309C88 /* EditWordView.swift in Sources */,
 				AA5A57DB266199AA00A35786 /* AccountView.swift in Sources */,
+				AA9285AA2667E4D800164579 /* Dictionary.swift in Sources */,
 				AA5A57D6266198BF00A35786 /* LibraryView.swift in Sources */,
+				AA9285A82667E43500164579 /* Word.swift in Sources */,
 				AA6DA274265D8E1700309C88 /* AddDictView.swift in Sources */,
 				AA5A57E12661A6E300A35786 /* ImagePicker.swift in Sources */,
 				AA5A57DD26619B4B00A35786 /* LoginPageView.swift in Sources */,
